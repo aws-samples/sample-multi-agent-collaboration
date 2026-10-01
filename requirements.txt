@@ -1,0 +1,10 @@
+# Multi-Agent Collaboration - Dependencies
+# Install with: pip install -r requirements.txt
+
+# Strands Agents SDK - AI agent framework
+# https://pypi.org/project/strands-agents/
+strands-agents==1.50.2
+
+# Loads the repo-root .env (AWS_PROFILE, AWS_REGION, STRANDS_MODEL_*) in shared/model.py
+# https://pypi.org/project/python-dotenv/
+python-dotenv==1.2.4
