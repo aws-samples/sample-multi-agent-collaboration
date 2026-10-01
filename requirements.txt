@@ -3,7 +3,7 @@
 
 # Strands Agents SDK - AI agent framework
 # https://pypi.org/project/strands-agents/
-strands-agents==1.50.2
+strands-agents==1.57.2
 
 # Loads the repo-root .env (AWS_PROFILE, AWS_REGION, STRANDS_MODEL_*) in shared/model.py
 # https://pypi.org/project/python-dotenv/
