@@ -78,7 +78,7 @@ In multi-agent collaboration, agents act as **peers**. Each agent communicates a
 
 ### Swarm Handoff
 
-The [swarm handoff](swarm_handoff.py) uses the Strands [`Swarm`](https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/) primitive: peer specialists that **hand off** to each other based on what the question needs. There is no central router and each agent answers its part and defers the rest:
+The [swarm handoff](swarm_handoff.py) uses the Strands [`Swarm`](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/) primitive: peer specialists that **hand off** to each other based on what the question needs. There is no central router and each agent answers its part and defers the rest:
 
 ```python
 from strands.multiagent import Swarm
@@ -128,8 +128,8 @@ Use debate for self-correction and reflective refinement. The adversarial pressu
 
 - [Companion blog post: When Multi-Agent Collaboration Earns Its Cost](When%20Multi-Agent%20Collaboration%20Earns%20Its%20Cost.md)
 - [AWS Prescriptive Guidance - Multi-agent collaboration](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/multi-agent-collaboration.html)
-- [Strands multi-agent: Swarm](https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/)
-- [Strands multi-agent: Agents as Tools](https://strandsagents.com/docs/user-guide/concepts/multi-agent/agents-as-tools/)
+- [Strands multi-agent: Swarm](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/)
+- [Strands multi-agent: Agents as Tools](https://strandsagents.com/docs/user-guide/sdk/multi-agent/agents-as-tools/)
 - [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
 ### The series

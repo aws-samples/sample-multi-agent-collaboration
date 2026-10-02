@@ -34,13 +34,13 @@ When LLMs made each agent individually capable, the natural next move was to wir
 
 ### The cost reckoning (2024-2026)
 
-Practice tempered the hype. [Anthropic's analysis](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them) found multi-agent implementations typically use **3–10x more tokens** than single-agent approaches for equivalent work. Their flagship [Research feature](https://www.anthropic.com/engineering/built-multi-agent-research-system) uses roughly 15x. Cognition, the team behind Devin, went further in [Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents), arguing that parallel subagents make implicit, conflicting decisions that drag down the final answer.
+Practice tempered the hype. [Anthropic's analysis](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them) found multi-agent implementations typically use **3–10x more tokens** than single-agent approaches for equivalent work. Their flagship [Research feature](https://www.anthropic.com/engineering/multi-agent-research-system) uses roughly 15x. Cognition, the team behind Devin, went further in [Don't Build Multi-Agents](https://cognition.com/blog/dont-build-multi-agents), arguing that parallel subagents make implicit, conflicting decisions that drag down the final answer.
 
 ---
 
 ## The Cost Is Real
 
-Those two positions, multi and single agent, aren't contradictory, both are right under certain conditions. The asymmetry is what matters: when multi-agent works, the wins are real (Anthropic reports a [~90% improvement](https://www.anthropic.com/engineering/built-multi-agent-research-system) on their internal research benchmark in June 2025); when it doesn't, you've spent months and many times the inference budget for no improvement. [Anthropic also reports](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them) watching teams invest heavily in elaborate architectures only to find that better prompting of a *single* agent matched the result.
+Those two positions, multi and single agent, aren't contradictory, both are right under certain conditions. The asymmetry is what matters: when multi-agent works, the wins are real (Anthropic reports a [~90% improvement](https://www.anthropic.com/engineering/multi-agent-research-system) on their internal research benchmark in June 2025); when it doesn't, you've spent months and many times the inference budget for no improvement. [Anthropic also reports](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them) watching teams invest heavily in elaborate architectures only to find that better prompting of a *single* agent matched the result.
 
 So the default should be a single, well-prompted agent. Reach for multi-agent only when it solves a constraint one agent cannot and don't use it as a targeted goal.
 
@@ -58,7 +58,7 @@ Drawn from [Anthropic's framework](https://claude.com/blog/building-multi-agent-
 
 ## The Decomposition Mistake
 
-The most common multi-agent failure isn't a bug, but rather a design choice that sounds reasonable: **split the work by role.** Imagine a feature-shipping system with a planner, an implementer, a tester, and a reviewer. Four agents, clean separation of concerns. It fails reliably, because the four roles share enormous context: the tester needs to know why the implementer made its choices, the reviewer needs the iteration history. Each handoff loses fidelity, and the team spends more tokens shuttling context than doing the work. [Cognition's critique](https://cognition.ai/blog/dont-build-multi-agents) of this pattern names the underlying principle: agents that work on the same goal need to share context, and every action one agent takes carries implicit decisions the others can't infer from a summary.
+The most common multi-agent failure isn't a bug, but rather a design choice that sounds reasonable: **split the work by role.** Imagine a feature-shipping system with a planner, an implementer, a tester, and a reviewer. Four agents, clean separation of concerns. It fails reliably, because the four roles share enormous context: the tester needs to know why the implementer made its choices, the reviewer needs the iteration history. Each handoff loses fidelity, and the team spends more tokens shuttling context than doing the work. [Cognition's critique](https://cognition.com/blog/dont-build-multi-agents) of this pattern names the underlying principle: agents that work on the same goal need to share context, and every action one agent takes carries implicit decisions the others can't infer from a summary.
 
 The right question isn't "how do I split this by role?" but "**where can I draw a context boundary?**" Agents earn separation when they operate on genuinely separate context. Researching market trends in Asia versus Europe is a clean split if neither agent needs the other's findings. Writing a feature then testing it is not.
 
@@ -113,7 +113,7 @@ The natural next step is to build. The **[companion sample](README.md)** impleme
 - [Companion sample: Multi-Agent Collaboration](README.md)
 - [AWS Prescriptive Guidance - Multi-agent collaboration](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/multi-agent-collaboration.html)
 - [Anthropic: Building multi-agent systems — when and how](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them)
-- [Strands multi-agent documentation](https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/)
+- [Strands multi-agent documentation](https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/)
 - [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 
 ---
